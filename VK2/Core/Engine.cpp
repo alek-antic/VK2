@@ -527,7 +527,7 @@ bool Engine::CompileGlslToSpv(const std::string & glslPath, std::optional<std::s
 		return false;
 
 	// Write compiled spir-v to file
-	outFile.write((char *)result.cbegin(), (result.cend() - result.cbegin()) / sizeof(uint32_t));
+	outFile.write((char *)result.cbegin(), (result.cend() - result.cbegin()) * sizeof(uint32_t));
 	outFile.close();
 
 	return true;
